@@ -6,7 +6,7 @@ class Entity
     @velocity = Vector2D!
     @acceleration = Vector2D!
     @size = Vector2D width, height
-    @friction = Vector2D 1, 1
+    @friction = Vector2D!
     @state = state
 
   load: =>
@@ -16,10 +16,35 @@ class Entity
     -- Nothing to draw
 
   update: (dt) =>
+    -- Update the velocity in accordance to acceleration
     @velocity.x += @acceleration.x * dt
     @velocity.y += @acceleration.y * dt
-    @velocity.x *= @friction.x -- @todo Account for dt
-    @velocity.y *= @friction.y
+
+    -- Process the slow down from friction.
+    frictionxdt = @friction.x * dt
+    frictionydt = @friction.y * dt
+    if @velocity.x > 0
+      if @velocity.x > frictionxdt
+        @velocity.x -= frictionxdt
+      else
+        @velocity.x = 0
+    else if @velocity.x < 0
+      if @velocity.x < frictionxdt
+        @velocity.x += frictionxdt
+      else
+        @velocity.x = 0
+    if @velocity.y > 0
+      if @velocity.y > frictionydt
+        @velocity.y -= frictionydt
+      else
+        @velocity.y = 0
+    else if @velocity.y < 0
+      if @velocity.y < frictionydt
+        @velocity.y += frictionydt
+      else
+        @velocity.y = 0
+
+    -- Update the position
     @position.x += @velocity.x * dt
     @position.y += @velocity.y * dt
 

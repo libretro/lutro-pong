@@ -4,7 +4,7 @@ class Paddle extends Rectangle -- Abstract
   new: (game) =>
     @game = game
     super(0, 0, 5, 50)
-    @friction.y = 0.9
+    @friction.y = 900
     @accelerationSpeed = 1800
     @distanceFromSide = 20
     @centerY @game.height / 2
