@@ -22,7 +22,7 @@ do
     __init = function(self, game)
       self.game = game
       _parent_0.__init(self, 0, 0, 5, 50)
-      self.friction.y = 0.9
+      self.friction.y = 900
       self.accelerationSpeed = 1800
       self.distanceFromSide = 20
       return self:centerY(self.game.height / 2)

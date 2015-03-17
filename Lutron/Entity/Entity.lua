@@ -7,8 +7,38 @@ do
     update = function(self, dt)
       self.velocity.x = self.velocity.x + (self.acceleration.x * dt)
       self.velocity.y = self.velocity.y + (self.acceleration.y * dt)
-      self.velocity.x = self.velocity.x * self.friction.x
-      self.velocity.y = self.velocity.y * self.friction.y
+      local frictionxdt = self.friction.x * dt
+      local frictionydt = self.friction.y * dt
+      if self.velocity.x > 0 then
+        if self.velocity.x > frictionxdt then
+          self.velocity.x = self.velocity.x - frictionxdt
+        else
+          self.velocity.x = 0
+        end
+      else
+        if self.velocity.x < 0 then
+          if self.velocity.x < frictionxdt then
+            self.velocity.x = self.velocity.x + frictionxdt
+          else
+            self.velocity.x = 0
+          end
+        end
+      end
+      if self.velocity.y > 0 then
+        if self.velocity.y > frictionydt then
+          self.velocity.y = self.velocity.y - frictionydt
+        else
+          self.velocity.y = 0
+        end
+      else
+        if self.velocity.y < 0 then
+          if self.velocity.y < frictionydt then
+            self.velocity.y = self.velocity.y + frictionydt
+          else
+            self.velocity.y = 0
+          end
+        end
+      end
       self.position.x = self.position.x + (self.velocity.x * dt)
       self.position.y = self.position.y + (self.velocity.y * dt)
     end,
@@ -131,7 +161,7 @@ do
       self.velocity = Vector2D()
       self.acceleration = Vector2D()
       self.size = Vector2D(width, height)
-      self.friction = Vector2D(1, 1)
+      self.friction = Vector2D()
       self.state = state
     end,
     __base = _base_0,
