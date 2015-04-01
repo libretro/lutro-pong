@@ -4,12 +4,17 @@ local Player2 = require("Player2")
 local Ball = require("Ball")
 local Background = require("Background")
 local Score = require("Score")
+local Menu = require("Lutron/Entity/Menu")
 local game = Lutron(320, 240)
 lutro.conf = function(t)
   t.width = game.width
   t.height = game.height
 end
 lutro.load = function()
+  local menu = Menu({
+    "Hello",
+    "world"
+  })
   do
     game:addEntity(Background(game))
     game:addEntity(Ball(game), "ball")
@@ -17,6 +22,7 @@ lutro.load = function()
     game:addEntity(Player2(game), "player2")
     game:addEntity(Score(game, 1), "player1score")
     game:addEntity(Score(game, 2), "player2score")
+    game:addEntity(menu)
     game:load()
     return game
   end

@@ -4,6 +4,7 @@ Player2 = require "Player2"
 Ball = require "Ball"
 Background = require "Background"
 Score = require "Score"
+Menu = require "Lutron/Entity/Menu"
 
 game = Lutron 320, 240
 
@@ -12,6 +13,7 @@ lutro.conf = (t) ->
   t.height = game.height
 
 lutro.load = ->
+  menu = Menu {"Hello", "world"}
   with game
     \addEntity Background game
     \addEntity Ball(game), "ball"
@@ -19,6 +21,7 @@ lutro.load = ->
     \addEntity Player2(game), "player2"
     \addEntity Score(game, 1), "player1score"
     \addEntity Score(game, 2), "player2score"
+    \addEntity menu
     \load!
 
 lutro.update = game\update

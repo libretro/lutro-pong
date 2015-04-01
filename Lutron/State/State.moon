@@ -1,5 +1,5 @@
 -- A given state in the application's state machine.
-class State
+class States
   new: (parent = nil) =>
     @parent = parent
     @name = nil
