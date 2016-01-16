@@ -1,8 +1,8 @@
-local Rectangle = require("Lutron/Entity/Rectangle")
+local Image = require("Lutron/Entity/Image")
 local Audio = require("Lutron/Entity/Audio")
 local Ball
 do
-  local _parent_0 = Rectangle
+  local _parent_0 = Image
   local _base_0 = {
     load = function(self)
       _parent_0.load(self)
@@ -59,7 +59,7 @@ do
   setmetatable(_base_0, _parent_0.__base)
   local _class_0 = setmetatable({
     __init = function(self, game)
-      _parent_0.__init(self, game.width / 2, game.height / 2, 5, 5)
+      _parent_0.__init(self, 'Resources/ball.png', 8, 8)
       self.game = game
       self.initialSpeed = 180
       self.soundBounce1 = Audio("Resources/boop.wav")

@@ -1,10 +1,10 @@
-default: compile retroarch
-
 compile:
 	@moonc .
 
 retroarch:
 	@retroarch .
+
+play: compile retroarch
 
 clean:
 	@find . -name "*.lua" -exec rm -rf {} \;
