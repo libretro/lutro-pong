@@ -1,10 +1,10 @@
-Rectangle = require "Lutron/Entity/Rectangle"
+Image = require "Lutron/Entity/Image"
 Audio = require "Lutron/Entity/Audio"
 
-class Ball extends Rectangle
+class Ball extends Image
   -- @todo Add an Image Entity so that the ball can be a circle.
   new: (game) =>
-    super(game.width / 2, game.height / 2, 5, 5)
+    super('Resources/ball.png', 8, 8)
     @game = game
     @initialSpeed = 180
 
