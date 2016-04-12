@@ -44,6 +44,14 @@ class Ball extends Image
       -- Increase the speed of the ball
       @velocity\magnitude(@velocity\magnitude! * 1.1)
 
+      -- Push the ball to be outside of the paddle.
+      if @left! < @game.width / 2
+        -- The paddle on the left.
+        @left paddle\right!
+      else
+        -- The paddle on the right.
+        @right paddle\left!
+
     -- Check if the ball is out of bounds
     if @left! > @game.width
       -- Player 1 scores
