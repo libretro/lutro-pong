@@ -30,6 +30,11 @@ do
           local hitPercentAngle = (paddle:centerY() - self:centerY()) / paddle:height() * 100
           self.velocity:reflectDegrees(hitPercentAngle * -0.75)
           self.velocity:magnitude(self.velocity:magnitude() * 1.1)
+          if self:left() < self.game.width / 2 then
+            self:left(paddle:right())
+          else
+            self:right(paddle:left())
+          end
         end
       end
       if self:left() > self.game.width then
