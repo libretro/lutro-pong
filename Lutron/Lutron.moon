@@ -1,4 +1,5 @@
 StateMachine = require "Lutron/State/StateMachine"
+FontMedium = require "Lutron/Entity/FontMedium"
 
 class Lutron extends StateMachine
   new: (width = 320, height = 240, startingState = nil) =>
@@ -10,13 +11,16 @@ class Lutron extends StateMachine
     @b = 0
     @randomseed = os.time()
 
+    -- The Medium font is set to be the default
+    @defaultFont = FontMedium()
+
   load: =>
     -- Start the random seed
     math.randomseed @randomseed
 
-    -- @todo Implement a Font API
-    font = lutro.graphics.newImageFont "Lutron/Resources/font.png", " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,!?-+/"
-    lutro.graphics.setFont font
+    -- Set up the default font
+    @defaultFont\load!
+    @defaultFont\set!
 
     -- Set the background color for the application
     lutro.graphics.setBackgroundColor @r, @g, @b

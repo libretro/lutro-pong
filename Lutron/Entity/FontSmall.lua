@@ -1,28 +1,16 @@
-local Entity = require("Lutron/Entity/Entity")
-local Audio
+local Font = require("Lutron/Entity/Font")
+local FontSmall
 do
-  local _parent_0 = Entity
-  local _base_0 = {
-    load = function(self)
-      self.audio = lutro.audio.newSource(self.path)
-    end,
-    update = function(self) end,
-    play = function(self)
-      if self.audio ~= nil then
-        return lutro.audio.play(self.audio)
-      end
-    end
-  }
+  local _parent_0 = Font
+  local _base_0 = { }
   _base_0.__index = _base_0
   setmetatable(_base_0, _parent_0.__base)
   local _class_0 = setmetatable({
-    __init = function(self, path)
-      _parent_0.__init(self)
-      self.path = path
-      self.audio = nil
+    __init = function(self)
+      return _parent_0.__init(self, 'Lutron/Resources/font_small.png', " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,-!$:;'")
     end,
     __base = _base_0,
-    __name = "Audio",
+    __name = "FontSmall",
     __parent = _parent_0
   }, {
     __index = function(cls, name)
@@ -43,6 +31,6 @@ do
   if _parent_0.__inherited then
     _parent_0.__inherited(_parent_0, _class_0)
   end
-  Audio = _class_0
+  FontSmall = _class_0
   return _class_0
 end

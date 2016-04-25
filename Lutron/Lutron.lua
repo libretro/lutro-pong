@@ -1,12 +1,13 @@
 local StateMachine = require("Lutron/State/StateMachine")
+local FontMedium = require("Lutron/Entity/FontMedium")
 local Lutron
 do
   local _parent_0 = StateMachine
   local _base_0 = {
     load = function(self)
       math.randomseed(self.randomseed)
-      local font = lutro.graphics.newImageFont("Lutron/Resources/font.png", " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,!?-+/")
-      lutro.graphics.setFont(font)
+      self.defaultFont:load()
+      self.defaultFont:set()
       lutro.graphics.setBackgroundColor(self.r, self.g, self.b)
       for name, state in pairs(self.states) do
         state:load()
@@ -50,6 +51,7 @@ do
       self.g = 0
       self.b = 0
       self.randomseed = os.time()
+      self.defaultFont = FontMedium()
     end,
     __base = _base_0,
     __name = "Lutron",
