@@ -25,6 +25,11 @@ Experimental recreation of the 1972 classic video game: [Pong](http://wikipedia.
   make
   ```
 
+3. [Lint](https://en.wikipedia.org/wiki/Lint_(software)) the MoonScript with:
+
+  ```
+  make test
+  ```
 
 ## License
 

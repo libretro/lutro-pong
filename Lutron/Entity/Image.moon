@@ -1,7 +1,7 @@
 Entity = require "Lutron/Entity/Entity"
 
 class Image extends Entity
-  new: (path, width, height) =>
+  new: (path, width, height, state) =>
     super state
     @path = path
     @image = nil
