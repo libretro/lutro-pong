@@ -1,3 +1,6 @@
+if love ~= nil
+  export lutro = love
+
 Lutron = require "Lutron/Lutron"
 Player1 = require "Player1"
 Player2 = require "Player2"
