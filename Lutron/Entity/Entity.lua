@@ -1,6 +1,7 @@
 local Vector2D = require("Lutron/Math/Vector2D")
 local Entity
 do
+  local _class_0
   local _base_0 = {
     load = function(self) end,
     draw = function(self) end,
@@ -140,7 +141,7 @@ do
     end
   }
   _base_0.__index = _base_0
-  local _class_0 = setmetatable({
+  _class_0 = setmetatable({
     __init = function(self, x, y, width, height, state)
       if x == nil then
         x = 0

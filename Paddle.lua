@@ -1,6 +1,7 @@
 local Rectangle = require("Lutron/Entity/Rectangle")
 local Paddle
 do
+  local _class_0
   local _parent_0 = Rectangle
   local _base_0 = {
     processInput = function(self) end,
@@ -20,15 +21,15 @@ do
           self.velocity.y = -self.maxSpeedY
         end
       end
-      return _parent_0.update(self, dt)
+      return _class_0.__parent.__base.update(self, dt)
     end
   }
   _base_0.__index = _base_0
   setmetatable(_base_0, _parent_0.__base)
-  local _class_0 = setmetatable({
+  _class_0 = setmetatable({
     __init = function(self, game)
       self.game = game
-      _parent_0.__init(self, 0, 0, 5, 50)
+      _class_0.__parent.__init(self, 0, 0, 5, 50)
       self.friction.y = 900
       self.accelerationSpeed = 1800
       self.distanceFromSide = 20
@@ -42,7 +43,10 @@ do
     __index = function(cls, name)
       local val = rawget(_base_0, name)
       if val == nil then
-        return _parent_0[name]
+        local parent = rawget(cls, "__parent")
+        if parent then
+          return parent[name]
+        end
       else
         return val
       end

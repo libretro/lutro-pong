@@ -2,10 +2,11 @@ local Image = require("Lutron/Entity/Image")
 local Audio = require("Lutron/Entity/Audio")
 local Ball
 do
+  local _class_0
   local _parent_0 = Image
   local _base_0 = {
     load = function(self)
-      _parent_0.load(self)
+      _class_0.__parent.__base.load(self)
       self.soundBounce1:load()
       self.soundBounce2:load()
       return self:reset()
@@ -45,7 +46,7 @@ do
         self:reset()
         self.game:entities()["player2score"]:addScore()
       end
-      return _parent_0.update(self, dt)
+      return _class_0.__parent.__base.update(self, dt)
     end,
     paddleCollide = function(self)
       local player1 = self.game:entities()["player1"]
@@ -62,9 +63,9 @@ do
   }
   _base_0.__index = _base_0
   setmetatable(_base_0, _parent_0.__base)
-  local _class_0 = setmetatable({
+  _class_0 = setmetatable({
     __init = function(self, game)
-      _parent_0.__init(self, 'Resources/ball.png', 8, 8)
+      _class_0.__parent.__init(self, 'Resources/ball.png', 8, 8)
       self.game = game
       self.initialSpeed = 180
       self.soundBounce1 = Audio("Resources/boop.wav")
@@ -77,7 +78,10 @@ do
     __index = function(cls, name)
       local val = rawget(_base_0, name)
       if val == nil then
-        return _parent_0[name]
+        local parent = rawget(cls, "__parent")
+        if parent then
+          return parent[name]
+        end
       else
         return val
       end

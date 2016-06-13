@@ -1,6 +1,7 @@
 local ColoredEntity = require("Lutron/Entity/ColoredEntity")
 local Background
 do
+  local _class_0
   local _parent_0 = ColoredEntity
   local _base_0 = {
     load = function(self)
@@ -10,7 +11,7 @@ do
       self.position.x = self.game.width / 2
     end,
     draw = function(self)
-      _parent_0.draw(self)
+      _class_0.__parent.__base.draw(self)
       for i = self.padding, self.game.height - self.padding, self.length + self.lineSpacing do
         lutro.graphics.line(self.position.x, i, self.position.x, i + self.length)
       end
@@ -18,9 +19,9 @@ do
   }
   _base_0.__index = _base_0
   setmetatable(_base_0, _parent_0.__base)
-  local _class_0 = setmetatable({
+  _class_0 = setmetatable({
     __init = function(self, game)
-      _parent_0.__init(self)
+      _class_0.__parent.__init(self)
       self.game = game
     end,
     __base = _base_0,
@@ -30,7 +31,10 @@ do
     __index = function(cls, name)
       local val = rawget(_base_0, name)
       if val == nil then
-        return _parent_0[name]
+        local parent = rawget(cls, "__parent")
+        if parent then
+          return parent[name]
+        end
       else
         return val
       end

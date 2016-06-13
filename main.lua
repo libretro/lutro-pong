@@ -1,3 +1,6 @@
+if love ~= nil then
+  lutro = love
+end
 local Lutron = require("Lutron/Lutron")
 local Player1 = require("Player1")
 local Player2 = require("Player2")

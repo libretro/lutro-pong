@@ -2,10 +2,11 @@ local Text = require("Lutron/Entity/Text")
 local Audio = require("Lutron/Entity/Audio")
 local Score
 do
+  local _class_0
   local _parent_0 = Text
   local _base_0 = {
     load = function(self)
-      _parent_0.load(self)
+      _class_0.__parent.__base.load(self)
       return self.soundScore:load()
     end,
     reset = function(self)
@@ -21,9 +22,9 @@ do
   }
   _base_0.__index = _base_0
   setmetatable(_base_0, _parent_0.__base)
-  local _class_0 = setmetatable({
+  _class_0 = setmetatable({
     __init = function(self, game, player)
-      _parent_0.__init(self, 0, 0, 20, 30)
+      _class_0.__parent.__init(self, 0, 0, 20, 30)
       self.soundScore = Audio("Resources/blip.wav")
       self:reset()
       self.position.y = 10
@@ -36,7 +37,10 @@ do
     __index = function(cls, name)
       local val = rawget(_base_0, name)
       if val == nil then
-        return _parent_0[name]
+        local parent = rawget(cls, "__parent")
+        if parent then
+          return parent[name]
+        end
       else
         return val
       end

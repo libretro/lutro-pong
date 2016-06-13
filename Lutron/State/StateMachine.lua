@@ -1,6 +1,7 @@
 local State = require("Lutron/State/State")
 local StateMachine
 do
+  local _class_0
   local stateNameIndex, currentStateName
   local _base_0 = {
     addState = function(self, state)
@@ -20,7 +21,7 @@ do
     end
   }
   _base_0.__index = _base_0
-  local _class_0 = setmetatable({
+  _class_0 = setmetatable({
     __init = function(self, startingState)
       if startingState == nil then
         startingState = nil

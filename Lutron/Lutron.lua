@@ -2,6 +2,7 @@ local StateMachine = require("Lutron/State/StateMachine")
 local FontMedium = require("Lutron/Entity/FontMedium")
 local Lutron
 do
+  local _class_0
   local _parent_0 = StateMachine
   local _base_0 = {
     load = function(self)
@@ -33,7 +34,7 @@ do
   }
   _base_0.__index = _base_0
   setmetatable(_base_0, _parent_0.__base)
-  local _class_0 = setmetatable({
+  _class_0 = setmetatable({
     __init = function(self, width, height, startingState)
       if width == nil then
         width = 320
@@ -44,7 +45,7 @@ do
       if startingState == nil then
         startingState = nil
       end
-      _parent_0.__init(self, startingState)
+      _class_0.__parent.__init(self, startingState)
       self.width = width
       self.height = height
       self.r = 0
@@ -60,7 +61,10 @@ do
     __index = function(cls, name)
       local val = rawget(_base_0, name)
       if val == nil then
-        return _parent_0[name]
+        local parent = rawget(cls, "__parent")
+        if parent then
+          return parent[name]
+        end
       else
         return val
       end

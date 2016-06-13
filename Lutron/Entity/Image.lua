@@ -1,21 +1,22 @@
 local Entity = require("Lutron/Entity/Entity")
 local Image
 do
+  local _class_0
   local _parent_0 = Entity
   local _base_0 = {
     load = function(self)
       self.image = lutro.graphics.newImage(self.path)
     end,
     draw = function(self)
-      _parent_0.draw(self)
+      _class_0.__parent.__base.draw(self)
       return lutro.graphics.draw(self.image, self.position.x, self.position.y)
     end
   }
   _base_0.__index = _base_0
   setmetatable(_base_0, _parent_0.__base)
-  local _class_0 = setmetatable({
+  _class_0 = setmetatable({
     __init = function(self, path, width, height)
-      _parent_0.__init(self, state)
+      _class_0.__parent.__init(self, state)
       self.path = path
       self.image = nil
       self:width(width)
@@ -28,7 +29,10 @@ do
     __index = function(cls, name)
       local val = rawget(_base_0, name)
       if val == nil then
-        return _parent_0[name]
+        local parent = rawget(cls, "__parent")
+        if parent then
+          return parent[name]
+        end
       else
         return val
       end
