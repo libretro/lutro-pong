@@ -1,6 +1,6 @@
-# Lutro Pong
+# [Lutro Pong](http://github.com/libretro/lutro-pong)
 
-Experimental recreation of the 1972 classic video game: [Pong](http://wikipedia.org/wiki/Pong). Built using the [Lutro game framework](http://github.com/libretro/libretro-lutro), for [Libretro/RetroArch](http://libretro.com).
+Recreation of the 1972 classic video game: [Pong](http://wikipedia.org/wiki/Pong). Built using the [Lutro game framework](http://github.com/libretro/libretro-lutro), for [Libretro/RetroArch](http://libretro.com).
 
 ![Screenshot](Resources/screenshot.png)
 
@@ -22,7 +22,7 @@ Experimental recreation of the 1972 classic video game: [Pong](http://wikipedia.
 2. Build and run using:
 
   ```
-  make
+  make run
   ```
 
 
