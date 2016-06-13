@@ -22,7 +22,7 @@ Recreation of the 1972 classic video game: [Pong](http://wikipedia.org/wiki/Pong
 2. Build and run using:
 
   ```
-  make run
+  make build run
   ```
 
 

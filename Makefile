@@ -3,7 +3,7 @@ ROOT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 build:
 	@moonc .
 
-run: build
+run:
 	@retroarch -L ~/.config/retroarch/cores/lutro_libretro.so .
 
 clean:
