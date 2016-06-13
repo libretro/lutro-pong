@@ -13,7 +13,7 @@ clean:
 	rm -rf lutro-pong lutro-pong.lutro
 
 release: clean compile
-	git archive --format=zip --output=${ROOT_DIR}/lutro-pong.lutro master
+	git archive --format=zip --output=${ROOT_DIR}/lutro-pong.lutro release
 
 play-release: release
 	@retroarch -L ~/.config/retroarch/cores/lutro_libretro.so lutro-pong.lutro
