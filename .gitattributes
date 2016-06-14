@@ -1,0 +1,5 @@
+# Remove some files from being in the .lutro releases
+.gitattributes export-ignore
+.gitignore export-ignore
+Makefile export-ignore
+*.moon export-ignore
