@@ -10,10 +10,6 @@ Score = require "Score"
 
 game = Lutron 320, 240
 
-lutro.conf = (t) ->
-  t.width  = game.width
-  t.height = game.height
-
 lutro.load = ->
   with game
     \addEntity Background game
