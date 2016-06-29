@@ -3,7 +3,7 @@ Audio = require("Lutron/Entity/Audio")
 
 class Score extends Text
   new: (game, player) =>
-    super(0, 0, 20, 30)
+    super("0")
     @soundScore = Audio("Resources/blip.wav")
     @reset!
 

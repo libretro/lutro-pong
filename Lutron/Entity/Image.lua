@@ -15,8 +15,8 @@ do
   _base_0.__index = _base_0
   setmetatable(_base_0, _parent_0.__base)
   _class_0 = setmetatable({
-    __init = function(self, path, width, height)
-      _class_0.__parent.__init(self, state)
+    __init = function(self, path, width, height, state)
+      _class_0.__parent.__init(self, 0, 0, width, height, state)
       self.path = path
       self.image = nil
       self:width(width)

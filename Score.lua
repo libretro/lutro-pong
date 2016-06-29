@@ -24,7 +24,7 @@ do
   setmetatable(_base_0, _parent_0.__base)
   _class_0 = setmetatable({
     __init = function(self, game, player)
-      _class_0.__parent.__init(self, 0, 0, 20, 30)
+      _class_0.__parent.__init(self, "0")
       self.soundScore = Audio("Resources/blip.wav")
       self:reset()
       self.position.y = 10

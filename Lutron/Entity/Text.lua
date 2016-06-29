@@ -5,13 +5,13 @@ do
   local _parent_0 = Entity
   local _base_0 = {
     draw = function(self)
-      if font ~= nil then
+      if self.font ~= nil then
         self.font:set()
       end
       return lutro.graphics.print(self.text, self.position.x, self.position.y)
     end,
     load = function(self)
-      if font ~= nil then
+      if self.font ~= nil then
         return self.font:load()
       end
     end

@@ -7,10 +7,10 @@ class Text extends Entity
     @font = font
 
   draw: =>
-    if font != nil
+    if @font != nil
         @font\set!
     lutro.graphics.print @text, @position.x, @position.y
 
   load: =>
-    if font != nil
+    if @font != nil
       @font\load!

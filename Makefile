@@ -6,6 +6,9 @@ build:
 run:
 	@retroarch -L ~/.config/retroarch/cores/lutro_libretro.so .
 
+test:
+	@moonc -l .
+
 clean:
 	@find . -name "*.lua" -exec rm -rf {} \;
 	rm -rf lutro-pong lutro-pong.lutro

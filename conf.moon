@@ -1,7 +1,9 @@
-if lutro ~= nil
-	love = lutro
+lib = if lutro
+	lutro
+else
+	love
 
-love.conf = (t) ->
+lib.conf = (t) ->
 	t.width  = 320
 	t.height = 240
 	t.title = "Pong"
@@ -11,5 +13,6 @@ love.conf = (t) ->
 	t.version = "0.10.1"
 	t.console = false
 	t.release = false
-	--t.window.width = t.width
-	--t.window.height = t.height
+	if t.window
+		t.window.width = t.width
+		t.window.height = t.height

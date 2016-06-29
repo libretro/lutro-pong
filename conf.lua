@@ -1,7 +1,10 @@
-if lutro ~= nil then
-  local love = lutro
+local lib
+if lutro then
+  lib = lutro
+else
+  lib = love
 end
-love.conf = function(t)
+lib.conf = function(t)
   t.width = 320
   t.height = 240
   t.title = "Pong"
@@ -11,4 +14,8 @@ love.conf = function(t)
   t.version = "0.10.1"
   t.console = false
   t.release = false
+  if t.window then
+    t.window.width = t.width
+    t.window.height = t.height
+  end
 end
