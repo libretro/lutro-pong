@@ -1,5 +1,5 @@
 local StateMachine = require("Lutron/State/StateMachine")
-local FontMedium = require("Lutron/Entity/FontMedium")
+local FontLarge = require("Lutron/Font/FontLarge")
 local Lutron
 do
   local _class_0
@@ -52,7 +52,7 @@ do
       self.g = 0
       self.b = 0
       self.randomseed = os.time()
-      self.defaultFont = FontMedium()
+      self.defaultFont = FontLarge()
     end,
     __base = _base_0,
     __name = "Lutron",
