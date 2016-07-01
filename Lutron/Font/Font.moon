@@ -1,8 +1,5 @@
-Entity = require "Lutron/Entity/Entity"
-
-class Font extends Entity
+class Font
   new: (path, characters) =>
-    super!
     @path = path
     @chars = characters
 
@@ -13,6 +10,3 @@ class Font extends Entity
   set: =>
     if @font != nil
       lutro.graphics.setFont(@font)
-
-  update: =>
-    -- Nothing

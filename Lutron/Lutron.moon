@@ -1,5 +1,5 @@
 StateMachine = require "Lutron/State/StateMachine"
-FontMedium = require "Lutron/Entity/FontMedium"
+FontLarge = require "Lutron/Font/FontLarge"
 
 class Lutron extends StateMachine
   new: (width = 320, height = 240, startingState = nil) =>
@@ -11,8 +11,8 @@ class Lutron extends StateMachine
     @b = 0
     @randomseed = os.time()
 
-    -- The Medium font is set to be the default
-    @defaultFont = FontMedium()
+    -- The Large font is set to be the default
+    @defaultFont = FontLarge()
 
   load: =>
     -- Start the random seed

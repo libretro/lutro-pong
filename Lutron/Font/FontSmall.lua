@@ -1,31 +1,17 @@
-local Entity = require("Lutron/Entity/Entity")
-local Font
+local Font = require("Lutron/Font/Font")
+local FontSmall
 do
   local _class_0
-  local _parent_0 = Entity
-  local _base_0 = {
-    load = function(self)
-      if self.font == nil then
-        self.font = lutro.graphics.newImageFont(self.path, self.chars)
-      end
-    end,
-    set = function(self)
-      if self.font ~= nil then
-        return lutro.graphics.setFont(self.font)
-      end
-    end,
-    update = function(self) end
-  }
+  local _parent_0 = Font
+  local _base_0 = { }
   _base_0.__index = _base_0
   setmetatable(_base_0, _parent_0.__base)
   _class_0 = setmetatable({
-    __init = function(self, path, characters)
-      _class_0.__parent.__init(self)
-      self.path = path
-      self.chars = characters
+    __init = function(self)
+      return _class_0.__parent.__init(self, 'Lutron/Font/font_small.png', " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,-!$:;'")
     end,
     __base = _base_0,
-    __name = "Font",
+    __name = "FontSmall",
     __parent = _parent_0
   }, {
     __index = function(cls, name)
@@ -49,6 +35,6 @@ do
   if _parent_0.__inherited then
     _parent_0.__inherited(_parent_0, _class_0)
   end
-  Font = _class_0
+  FontSmall = _class_0
   return _class_0
 end
