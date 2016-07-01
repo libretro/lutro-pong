@@ -1,0 +1,5 @@
+# Atom Tree Ignore
+# https://github.com/leny/atom-tree-ignore
+
+*.lua
+.*
