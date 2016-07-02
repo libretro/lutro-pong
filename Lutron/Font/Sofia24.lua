@@ -1,5 +1,5 @@
 local Font = require("Lutron/Font/Font")
-local FontMedium
+local Sofia24
 do
   local _class_0
   local _parent_0 = Font
@@ -8,10 +8,10 @@ do
   setmetatable(_base_0, _parent_0.__base)
   _class_0 = setmetatable({
     __init = function(self)
-      return _class_0.__parent.__init(self, 'Lutron/Font/FontMedium.png', " 0123456789abcdefghijklmnopqrstuvxyzABCDEFGHIJKLMNOPQRSTUVXYZ!-.,$")
+      return _class_0.__parent.__init(self, 'Lutron/Font/Sofia24.png', " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
     end,
     __base = _base_0,
-    __name = "FontMedium",
+    __name = "Sofia24",
     __parent = _parent_0
   }, {
     __index = function(cls, name)
@@ -35,6 +35,6 @@ do
   if _parent_0.__inherited then
     _parent_0.__inherited(_parent_0, _class_0)
   end
-  FontMedium = _class_0
+  Sofia24 = _class_0
   return _class_0
 end

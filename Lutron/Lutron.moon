@@ -1,5 +1,6 @@
 StateMachine = require "Lutron/State/StateMachine"
-FontLarge = require "Lutron/Font/FontLarge"
+Sofia24 = require "Lutron/Font/Sofia24"
+FontManager = require "Lutron/Font/FontManager"
 
 class Lutron extends StateMachine
   new: (width = 320, height = 240, startingState = nil) =>
@@ -12,15 +13,15 @@ class Lutron extends StateMachine
     @randomseed = os.time()
 
     -- The Large font is set to be the default
-    @defaultFont = FontLarge()
+    @fonts = FontManager('default', Sofia24!)
 
   load: =>
     -- Start the random seed
     math.randomseed @randomseed
 
-    -- Set up the default font
-    @defaultFont\load!
-    @defaultFont\set!
+    -- Load all fonts, and set the default font up.
+    @fonts\load!
+    @fonts\set('default')
 
     -- Set the background color for the application
     lutro.graphics.setBackgroundColor @r, @g, @b

@@ -6,11 +6,14 @@ do
       if self.font == nil then
         self.font = lutro.graphics.newImageFont(self.path, self.chars)
       end
+      return self.font
     end,
     set = function(self)
       if self.font ~= nil then
-        return lutro.graphics.setFont(self.font)
+        lutro.graphics.setFont(self.font)
+        return true
       end
+      return false
     end
   }
   _base_0.__index = _base_0

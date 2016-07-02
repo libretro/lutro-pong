@@ -6,7 +6,10 @@ class Font
   load: =>
     if @font == nil
       @font = lutro.graphics.newImageFont(@path, @chars)
+    return @font
 
   set: =>
     if @font != nil
       lutro.graphics.setFont(@font)
+      return true
+    return false

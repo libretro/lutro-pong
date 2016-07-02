@@ -8,7 +8,7 @@ do
   setmetatable(_base_0, _parent_0.__base)
   _class_0 = setmetatable({
     __init = function(self)
-      return _class_0.__parent.__init(self, 'Lutron/Font/font_bold.png', " ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789*:|=-<>./'\"+")
+      return _class_0.__parent.__init(self, 'Lutron/Font/FontBold.png', " ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789*:|=-<>./'\"+")
     end,
     __base = _base_0,
     __name = "FontBold",
