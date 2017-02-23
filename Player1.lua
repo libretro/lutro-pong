@@ -5,7 +5,10 @@ do
   local _parent_0 = Paddle
   local _base_0 = {
     load = function(self)
-      return self:left(self.distanceFromSide)
+      self:left(self.distanceFromSide)
+      self.r = 244
+      self.g = 67
+      self.b = 54
     end,
     processInput = function(self)
       if love ~= nil then

@@ -3,6 +3,9 @@ Paddle = require "Paddle"
 class Player1 extends Paddle
 	load: =>
 		@left @distanceFromSide
+		@r = 244
+		@g = 67
+		@b = 54
 
 	processInput: =>
 		-- @todo Consolidate both Love2D and Lutro input code.

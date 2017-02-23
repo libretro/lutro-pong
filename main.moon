@@ -8,7 +8,7 @@ Ball = require "Ball"
 Background = require "Background"
 Score = require "Score"
 
-game = Lutron 320, 240
+game = Lutron 320, 240, nil, 33, 33, 33
 
 lutro.load = ->
   with game

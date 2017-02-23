@@ -5,7 +5,10 @@ do
   local _parent_0 = Paddle
   local _base_0 = {
     load = function(self)
-      return self:right(self.game.width - self.distanceFromSide)
+      self:right(self.game.width - self.distanceFromSide)
+      self.r = 33
+      self.g = 150
+      self.b = 243
     end,
     processInput = function(self)
       local ball = self.game:entities()["ball"]
