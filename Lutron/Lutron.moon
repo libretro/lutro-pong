@@ -26,9 +26,8 @@ class Lutron extends StateMachine
     -- Set the background color for the application
     lutro.graphics.setBackgroundColor @r, @g, @b
 
-    -- Load each state
-    for name, state in pairs @states
-      state\load!
+    -- Load all the states.
+    super!
 
     -- Enter the first state
     @currentState!\enter nil

@@ -18,6 +18,14 @@ do
       self.states[name]:enter(self.states[currentStateName])
       self:currentState():exit(self.states[name])
       currentStateName = name
+    end,
+    setState = function(self, name)
+      self.currentStateName = name
+    end,
+    load = function(self)
+      for name, state in pairs(self.states) do
+        state:load()
+      end
     end
   }
   _base_0.__index = _base_0

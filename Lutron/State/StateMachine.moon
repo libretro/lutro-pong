@@ -23,3 +23,11 @@ class StateMachine
     @states[name]\enter @states[currentStateName]
     @currentState!\exit @states[name]
     currentStateName = name
+
+  setState: (name) =>
+  	@currentStateName = name
+
+  load: =>
+    -- Load each state
+    for name, state in pairs @states
+      state\load!

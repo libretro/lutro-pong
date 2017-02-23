@@ -1,8 +1,8 @@
 -- A given state in the application's state machine.
 class State
-  new: (parent = nil) =>
+  new: (parent = nil, name = nil) =>
     @parent = parent
-    @name = nil
+    @name = name
     @entities = {}
 
   -- Loads all entities in the State.

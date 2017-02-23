@@ -33,12 +33,15 @@ do
   }
   _base_0.__index = _base_0
   _class_0 = setmetatable({
-    __init = function(self, parent)
+    __init = function(self, parent, name)
       if parent == nil then
         parent = nil
       end
+      if name == nil then
+        name = nil
+      end
       self.parent = parent
-      self.name = nil
+      self.name = name
       self.entities = { }
     end,
     __base = _base_0,

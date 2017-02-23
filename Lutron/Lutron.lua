@@ -11,9 +11,7 @@ do
       self.fonts:load()
       self.fonts:set('default')
       lutro.graphics.setBackgroundColor(self.r, self.g, self.b)
-      for name, state in pairs(self.states) do
-        state:load()
-      end
+      _class_0.__parent.__base.load(self)
       return self:currentState():enter(nil)
     end,
     update = function(self, dt)
