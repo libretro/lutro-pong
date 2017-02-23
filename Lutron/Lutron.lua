@@ -36,7 +36,7 @@ do
   _base_0.__index = _base_0
   setmetatable(_base_0, _parent_0.__base)
   _class_0 = setmetatable({
-    __init = function(self, width, height, startingState)
+    __init = function(self, width, height, startingState, r, g, b)
       if width == nil then
         width = 320
       end
@@ -46,12 +46,21 @@ do
       if startingState == nil then
         startingState = nil
       end
+      if r == nil then
+        r = 0
+      end
+      if g == nil then
+        g = 0
+      end
+      if b == nil then
+        b = 0
+      end
       _class_0.__parent.__init(self, startingState)
       self.width = width
       self.height = height
-      self.r = 0
-      self.g = 0
-      self.b = 0
+      self.r = r
+      self.g = g
+      self.b = b
       self.randomseed = os.time()
       self.fonts = FontManager('default', Sofia24())
     end,

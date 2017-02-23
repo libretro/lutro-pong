@@ -7,7 +7,7 @@ local Player2 = require("Player2")
 local Ball = require("Ball")
 local Background = require("Background")
 local Score = require("Score")
-local game = Lutron(320, 240)
+local game = Lutron(320, 240, nil, 33, 33, 33)
 lutro.load = function()
   do
     game:addEntity(Background(game))

@@ -3,6 +3,9 @@ Paddle = require "Paddle"
 class Player2 extends Paddle
   load: =>
     @right @game.width - @distanceFromSide
+	@r = 33
+	@g = 150
+	@b = 243
 
   processInput: =>
     ball = @game\entities!["ball"]

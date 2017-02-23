@@ -3,13 +3,13 @@ Sofia24 = require "Lutron/Font/Sofia24"
 FontManager = require "Lutron/Font/FontManager"
 
 class Lutron extends StateMachine
-  new: (width = 320, height = 240, startingState = nil) =>
+  new: (width = 320, height = 240, startingState = nil, r = 0, g = 0, b = 0) =>
     super startingState
     @width = width
     @height = height
-    @r = 0
-    @g = 0
-    @b = 0
+    @r = r
+    @g = g
+    @b = b
     @randomseed = os.time()
 
     -- The Large font is set to be the default
