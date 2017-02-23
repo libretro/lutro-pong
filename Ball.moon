@@ -68,12 +68,16 @@ class Ball extends Image
 
   -- Check if there is a collision with the paddles, returning the paddle
   paddleCollide: =>
-    player1 = @game\entities!["player1"]
-    player2 = @game\entities!["player2"]
-    if @velocity.x <= 0 and @collision player1
-      @soundBounce1\play!
-      return player1
-    elseif @velocity.x >= 0 and @collision player2
-      @soundBounce2\play!
-      return player2
+    -- When the ball is on the left, collision check against the left paddle
+    if @left! < @game.width / 2
+      player1 = @game\entities!["player1"]
+      if @velocity.x <= 0 and @collision player1
+        @soundBounce1\play!
+        return player1
+    -- When the ball is on the right, collision check against the right paddle
+    else
+      player2 = @game\entities!["player2"]
+      if @velocity.x >= 0 and @collision player2
+        @soundBounce2\play!
+        return player2
     return false
