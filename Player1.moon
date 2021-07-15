@@ -8,18 +8,9 @@ class Player1 extends Paddle
 		@b = 54
 
 	processInput: =>
-		-- @todo Consolidate both Love2D and Lutro input code.
-		if love ~= nil
-			if love.keyboard.isDown "up"
-				@acceleration.y = -@accelerationSpeed
-			elseif love.keyboard.isDown "down"
-				@acceleration.y = -@accelerationSpeed
-			else
-				@acceleration.y = 0
+		if lutro.joystick.isDown(1, 5)
+			@acceleration.y = -@accelerationSpeed
+		elseif lutro.joystick.isDown(1, 6)
+			@acceleration.y = @accelerationSpeed
 		else
-			if lutro.input.joypad("up") == 1
-				@acceleration.y = -@accelerationSpeed
-			elseif lutro.input.joypad("down") == 1
-				@acceleration.y = @accelerationSpeed
-			else
-				@acceleration.y = 0
+			@acceleration.y = 0

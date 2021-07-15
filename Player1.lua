@@ -12,17 +12,9 @@ do
     end,
     processInput = function(self)
       if love ~= nil then
-        if love.keyboard.isDown("up") then
+        if lutro.joystick.isDown(1, 5) then
           self.acceleration.y = -self.accelerationSpeed
-        elseif love.keyboard.isDown("down") then
-          self.acceleration.y = -self.accelerationSpeed
-        else
-          self.acceleration.y = 0
-        end
-      else
-        if lutro.input.joypad("up") == 1 then
-          self.acceleration.y = -self.accelerationSpeed
-        elseif lutro.input.joypad("down") == 1 then
+        elseif lutro.joystick.isDown(1, 6) then
           self.acceleration.y = self.accelerationSpeed
         else
           self.acceleration.y = 0
