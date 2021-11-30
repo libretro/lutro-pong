@@ -6,6 +6,7 @@ class Player2 extends Paddle
 	@r = 33
 	@g = 150
 	@b = 243
+	@a = 255
 
   processInput: =>
     ball = @game\entities!["ball"]

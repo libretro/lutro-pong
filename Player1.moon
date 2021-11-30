@@ -6,6 +6,7 @@ class Player1 extends Paddle
 		@r = 244
 		@g = 67
 		@b = 54
+		@b = 255
 
 	processInput: =>
 		if lutro.joystick.isDown(1, 5)

@@ -9,6 +9,7 @@ do
       self.r = 244
       self.g = 67
       self.b = 54
+	  self.a = 255
     end,
     processInput = function(self)
       if love ~= nil then
