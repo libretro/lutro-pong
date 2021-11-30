@@ -9,7 +9,7 @@ do
       self.r = 33
       self.g = 150
       self.b = 243
-      self.b = 255
+      self.a = 255
     end,
     processInput = function(self)
       local ball = self.game:entities()["ball"]
